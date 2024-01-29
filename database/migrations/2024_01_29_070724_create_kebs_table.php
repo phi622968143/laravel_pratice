@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pizzahouse extends Migration
+class CreateKebsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,10 @@ class Pizzahouse extends Migration
      * @return void
      */
     public function up()
-    {   
-        Schema::create('pizzas', function (Blueprint $table) {
-            $table->BigIncrements('id');
+    {
+        Schema::create('kebs', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('type');
-            $table->string('base');
-            $table->string('name');
-            $table->json('toppings');
         });
     }
 
@@ -30,6 +26,6 @@ class Pizzahouse extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizzas');
+        Schema::dropIfExists('kebs');
     }
 }
